@@ -58,7 +58,7 @@ def calcular_segundos(hora_inicio, hora_fin):
 def evaluar_cumplimiento(df):
     resultados = []
     df['Punto'] = df['Punto de control'].apply(extraer_punto)
-    df['Hora'] = pd.to_datetime(df['Hora (Formato hh:mm)'], format="%H:%M:%S").dt.time
+    df['Hora'] = pd.to_datetime(df['Hora (Formato hh:mm:ss)'], format="%H:%M:%S").dt.time
 
     df = df.dropna(subset=['PPU (Placa Patente Unica)', 'Punto', 'Hora', 'Fecha'])
 
